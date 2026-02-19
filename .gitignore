@@ -6,3 +6,9 @@ data/
 .venv/
 data/
 .venv/
+slurm-*.out
+*.out
+project1_outputs/
+data/
+.venv/
+slurm-*.out
