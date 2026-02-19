@@ -22,7 +22,7 @@ from sklearn.ensemble import StackingClassifier
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support, classification_report, confusion_matrix
 
 # -------- EDIT THESE --------
-DATA_PATH = "imdb.csv"     # <-- change to your dataset filename
+DATA_PATH = "data/imdb_reviews.csv"     # <-- change to your dataset filename
 TEXT_COL  = "review"       # <-- change to your text column name
 LABEL_COL = "sentiment"    # <-- change to your label column name
 # ----------------------------
@@ -81,7 +81,7 @@ def main():
     print("Total:", len(df))
     print("Train:", len(X_train), "Test:", len(X_test))
 
-    cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=RANDOM_STATE)
+    cv = StratifiedKFold(n_splits=3, shuffle=True, random_state=RANDOM_STATE)
 
     # 3 preprocessing variants (simple + realistic)
     preprocess = {
