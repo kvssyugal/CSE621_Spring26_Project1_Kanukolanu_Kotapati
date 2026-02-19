@@ -1,0 +1,9 @@
+{
+  "preprocess": "P2_stopwords_uni+bi",
+  "feature_select": "FS_none",
+  "model": "StackingClassifier",
+  "test_accuracy": 0.9118,
+  "test_precision_weighted": 0.9118010542106989,
+  "test_recall_weighted": 0.9118,
+  "test_f1_weighted": 0.9117999435519639
+}

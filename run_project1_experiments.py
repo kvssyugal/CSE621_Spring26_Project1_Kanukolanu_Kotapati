@@ -81,7 +81,7 @@ def main():
     print("Total:", len(df))
     print("Train:", len(X_train), "Test:", len(X_test))
 
-    cv = StratifiedKFold(n_splits=3, shuffle=True, random_state=RANDOM_STATE)
+    cv = StratifiedKFold(n_splits=2, shuffle=True, random_state=RANDOM_STATE)
 
     # 3 preprocessing variants (simple + realistic)
     preprocess = {
@@ -94,16 +94,15 @@ def main():
     feature_select = {
         "FS_none": "passthrough",
         "FS_chi2_k10k": SelectKBest(chi2, k=10000),
-        "FS_mutual_info_k10k": SelectKBest(mutual_info_classif, k=10000),
-    }
+            }
 
     # 3 models + parameter exploration
     model_grids = {
-        "MultinomialNB": (MultinomialNB(), {"clf__alpha": [0.1, 0.5, 1.0]}),
-        "LinearSVC": (LinearSVC(), {"clf__C": [0.5, 1.0, 2.0]}),
+        "MultinomialNB": (MultinomialNB(), {"clf__alpha": [0.5, 1.0]}),
+        "LinearSVC": (LinearSVC(), {"clf__C": [1.0, 2.0]}),
         "SGDClassifier": (
             SGDClassifier(random_state=RANDOM_STATE, max_iter=2000, tol=1e-3),
-            {"clf__loss": ["hinge", "log_loss"], "clf__alpha": [1e-4, 1e-3]}
+            {"clf__loss": ["hinge"], "clf__alpha": [1e-4]}
         ),
     }
 

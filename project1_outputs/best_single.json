@@ -1,0 +1,13 @@
+{
+  "preprocess": "P2_stopwords_uni+bi",
+  "feature_select": "FS_none",
+  "model": "LinearSVC",
+  "best_params": {
+    "clf__C": 1.0
+  },
+  "cv_best_f1_weighted": 0.8977351299567842,
+  "test_accuracy": 0.9068,
+  "test_precision_weighted": 0.9068708931844285,
+  "test_recall_weighted": 0.9068,
+  "test_f1_weighted": 0.9067959400311476
+}
