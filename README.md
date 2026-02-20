@@ -34,3 +34,7 @@ We built a sentiment classification pipeline and compared:
 - `sbatch run_proj1.sbatch`
 
 Outputs are written to: `project1_outputs/`
+
+---
+### Note about the video vs slides
+We made a few last-minute formatting/wording updates to the slides after recording. The video was recorded using the previous slide version, but the workflow, results, and links are the same.
